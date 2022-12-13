@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>my fvrt random number is <%= rNum %></h1>
+    <h1>my fvrt random number is <%= Math.floor(Math.random()*100) %></h1>
+<h2><%= 'templating'.toUpperCase() %></h2>
+<h2><%= 'templating'.toUpperCase().substring(0,2) %></h2>
+<% if(rNum%2==0){ %>
+<h2>ths is eveb</h2>
+<% }else{ %>
+    <h2>ths is odd</h2>
+<% } %>
+<ul>
+    <% for(let i=1;i<=10;i++)
+    { %>
+        <li> <%=i %></li>
+
+    <% } %>
+</ul>
+</body>
+</html>
