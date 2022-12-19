@@ -9,15 +9,20 @@
 </head>
 <body>
     <h1>SSR</h1>
+    <form action="/todo" method="POST">
+        <input type="text" name="todo" id="">
+        <button type="submit">add</button>
+    </form>
     <ul>
-        <%=for( let item of todo ) {%>
-            <li><%= item %></li>
-        <% } %>    
+        <% for ( let items of todos ) {%>
+            <li><%= items %></li>
+        <%  } %>    
     </ul>
 </body>
 </html>
 
 
-//js hame list of todo mil rhi thi script ke throught example of client side render 
+<!-- //js hame list of todo mil rhi thi script ke throught example of client side render 
 
-//
+
+// -->

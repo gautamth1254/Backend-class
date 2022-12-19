@@ -8,9 +8,11 @@ app.set('views',__dirname + '/views') //will concatinate
 
 app.use('/',express.static(__dirname + '/public')); // serving static files  // app.use me static file use
 
-const todos=['GO TO GYM','GO TO HOME','WATCH WEB SERIES','Learn web' ];
+app.use(express.urlencoded({extended:true}))
 
-app.get('/todo', function(req, res){
+const todos=['GO TO GYM','GO TO HOME','WATCH WEB SERIES','Learn web'];
+
+app.get('/todo', (req, res)=>{
     if(req.xhr){
         console.log("ajax request")
         res.status(200).json(todos)
@@ -20,6 +22,14 @@ app.get('/todo', function(req, res){
     }
     //res.send("hello from server");
 });
+
+app.post('/todo',(req, res)=>{
+    const {todo} = req.body
+    todos.push(todo)
+    console.log(req.body);
+    //res.send("Post request")
+    res.redirect('/todo')
+})
 
 app.listen(5000,()=>{
     console.log('listening on port 5000')
