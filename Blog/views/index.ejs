@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <!-- <a href="/comments/new">New Comments</a> -->
+    <h1>Blogs</h1>
+    <ul>
+
+    <%    for(let item of comments) {%>
+            <li class="container glass"><strong><%= item.username%></strong>-<%= item.comments %>
+            <br>
+            <a href="/comments/<%= item.id%>"><button class="btn btn-link" >Show</button></a>
+
+            <a href="/comments/<%= item.id %>/edit"><button class="btn btn-link" >Edit</button></a>
+
+            <p><form method="POST" action="/comments/<%=item.id%>?_method=DELETE">
+                <button class="btn btn-link" type="submit">Delete</button>
+            </form></p>
+            </li>
+    <%    } %>
+    </ul>
+    
+    <a href="/comments/new">
+    <div class="containerr glass" >
+        <h1 style="padding-top: 7px;">Write More Comments</h1>
+    </div></a>
+
+</body>
+</html>

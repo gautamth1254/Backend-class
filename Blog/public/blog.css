@@ -1,0 +1,14 @@
+body{
+    background-image: url("/alex-shutin-kKvQJ6rK6S4-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+    margin-top: 15%;
+    font-size: 50px;
+}
+
